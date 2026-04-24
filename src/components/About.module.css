@@ -1,0 +1,25 @@
+.section { background: #fff; padding: 5rem 2rem; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+.pills { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+.pill { background: rgba(45,184,160,.1); color: var(--teal-dark); font-size: .8rem; font-weight: 600; padding: .35rem .9rem; border-radius: 50px; border: 1px solid rgba(45,184,160,.25); }
+
+.actions { display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+.outlineBtn { background: transparent; color: var(--teal-dark); border: 1.5px solid var(--teal); border-radius: 10px; padding: .9rem 2rem; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all .2s; }
+.outlineBtn:hover { background: var(--teal-light); }
+
+.quoteCard { background: linear-gradient(135deg, #0D2B3E 0%, #1A6B5A 100%); border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; }
+.quoteMark { font-size: 5rem; color: var(--teal); line-height: 0; opacity: .4; display: block; margin-bottom: 1rem; font-family: Georgia, serif; }
+.quote { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; color: #fff; line-height: 1.5; font-style: normal; }
+.quoteAuthor { font-size: .85rem; color: var(--mint); margin-top: 1rem; font-weight: 400; display: block; }
+.quoteBg { position: absolute; bottom: -30px; right: -30px; width: 180px; height: 180px; border-radius: 50%; background: rgba(45,184,160,.08); }
+
+.statsGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.statCard { background: #fff; border-radius: 14px; padding: 1.25rem; border: 1px solid #E0F0EE; text-align: center; transition: transform .25s, box-shadow .25s; }
+.statCard:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(45,184,160,.12); }
+.statNum { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--teal); line-height: 1; }
+.statLabel { font-size: .85rem; color: var(--gray); margin-top: .4rem; line-height: 1.4; }
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}

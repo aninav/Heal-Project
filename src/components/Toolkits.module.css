@@ -1,0 +1,32 @@
+.section { background: #F5FFFE; padding: 5rem 2rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem; margin-top: 3rem;
+}
+
+.card {
+  display: flex; align-items: center; gap: 1rem;
+  background: #fff; border: 1px solid #E0F0EE;
+  border-radius: 14px; padding: 1.25rem 1.5rem;
+  cursor: pointer; transition: all .25s;
+}
+.card:hover {
+  border-color: var(--teal);
+  box-shadow: 0 6px 24px rgba(45,184,160,.12);
+  transform: translateX(4px);
+}
+
+.icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--teal-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+
+.info { flex: 1; }
+.title { font-family: 'Syne', sans-serif; font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
+.desc  { font-size: .82rem; color: var(--gray); }
+
+.download { margin-left: auto; color: var(--teal); flex-shrink: 0; }

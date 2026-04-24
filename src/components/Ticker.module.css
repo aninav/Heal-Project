@@ -1,0 +1,4 @@
+.ticker { background: var(--teal); overflow: hidden; height: 42px; display: flex; align-items: center; }
+.inner { display: flex; animation: ticker-scroll 28s linear infinite; white-space: nowrap; gap: 3rem; }
+.item { font-family: 'Syne', sans-serif; font-size: .82rem; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: .8rem; }
+.dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.5); }

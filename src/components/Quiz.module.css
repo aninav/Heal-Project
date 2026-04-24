@@ -1,0 +1,58 @@
+.section { background: linear-gradient(135deg, var(--teal-light) 0%, #fff 100%); padding: 5rem 2rem; }
+
+.card {
+  background: #fff; border-radius: 24px; padding: 3rem;
+  box-shadow: 0 8px 40px rgba(45,184,160,.15);
+  max-width: 700px; margin: 3rem auto 0;
+  border: 1px solid #D5F0EC;
+}
+
+.progress { display: flex; gap: .4rem; margin-bottom: 1.5rem; }
+.dot { height: 4px; flex: 1; border-radius: 2px; background: #D5F0EC; }
+.dotDone { background: var(--teal); }
+
+.counter { font-size: .82rem; color: var(--gray); margin-bottom: .75rem; }
+.question { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; }
+
+.options { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.option {
+  border: 1.5px solid #D5F0EC; border-radius: 12px; padding: .9rem 1.2rem;
+  cursor: pointer; font-size: .95rem; font-weight: 500;
+  transition: all .2s; background: #F5FFFE; text-align: left;
+  font-family: 'DM Sans', sans-serif;
+}
+.option:hover { border-color: var(--teal); background: var(--teal-light); }
+.correct { border-color: var(--teal) !important; background: rgba(45,184,160,.12) !important; color: var(--teal-dark); }
+.wrong   { border-color: #FF6B6B !important; background: rgba(255,107,107,.08) !important; color: #c0392b; }
+
+.feedback {
+  margin-top: 1.5rem; padding: 1rem 1.25rem;
+  border-radius: 10px; font-size: .95rem; line-height: 1.6;
+}
+.feedbackCorrect { background: rgba(45,184,160,.1); color: var(--teal-dark); border: 1px solid rgba(45,184,160,.3); }
+.feedbackWrong   { background: rgba(255,107,107,.08); color: #c0392b; border: 1px solid rgba(255,107,107,.3); }
+
+.next {
+  margin-top: 1.5rem; background: var(--teal); color: #fff; border: none;
+  border-radius: 10px; padding: .75rem 1.75rem;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: .95rem;
+  cursor: pointer; transition: all .2s;
+}
+.next:hover { background: var(--teal-dark); }
+
+.scoreScreen { text-align: center; padding: 1rem; }
+.scoreNum { font-family: 'Syne', sans-serif; font-size: 3.5rem; font-weight: 800; color: var(--teal); }
+.scoreLabel { font-size: 1.1rem; color: var(--gray); margin-top: .75rem; }
+.scoreActions { display: flex; gap: 1rem; justify-content: center; margin-top: 1.75rem; flex-wrap: wrap; }
+.outlineBtn {
+  background: transparent; color: var(--teal-dark); border: 1.5px solid var(--teal);
+  border-radius: 10px; padding: .75rem 1.75rem;
+  font-family: 'Syne', sans-serif; font-weight: 600; font-size: .95rem;
+  cursor: pointer; transition: all .2s;
+}
+.outlineBtn:hover { background: var(--teal-light); }
+
+@media (max-width: 600px) {
+  .options { grid-template-columns: 1fr; }
+  .card { padding: 1.75rem; }
+}

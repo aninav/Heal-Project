@@ -1,0 +1,86 @@
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #0D2B3E 0%, #163D56 40%, #1A6B5A 100%);
+  position: relative; overflow: hidden;
+  padding: 7rem 2rem 4rem;
+  text-align: center;
+}
+
+.bgCircles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.circle {
+  position: absolute; border-radius: 50%;
+  background: rgba(45,184,160,.07); border: 1px solid rgba(45,184,160,.12);
+  animation: pulse-circle 6s ease-in-out infinite;
+}
+
+.content { position: relative; max-width: 780px; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(45,184,160,.15); border: 1px solid rgba(45,184,160,.4);
+  color: var(--mint); font-size: .8rem; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: .4rem 1rem; border-radius: 50px;
+  margin-bottom: 1.5rem;
+  animation: fadeUp .8s ease both;
+}
+.badgeDot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800; color: #fff; line-height: 1.08; margin-bottom: 1.2rem;
+  animation: fadeUp .8s .15s ease both;
+}
+.title span { color: var(--teal); }
+
+.sub {
+  font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,.72);
+  max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7;
+  animation: fadeUp .8s .3s ease both;
+}
+
+.buttons {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp .8s .45s ease both;
+}
+
+.stats {
+  display: flex; gap: 2.5rem; justify-content: center;
+  margin-top: 3.5rem; flex-wrap: wrap;
+  animation: fadeUp .8s .6s ease both;
+}
+.stat { text-align: center; }
+.statNum { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--teal); line-height: 1; }
+.statLabel { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: .2rem; letter-spacing: .5px; white-space: pre-line; }
+
+/* Social icons */
+.socials {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1rem; margin-top: 2.5rem;
+  animation: fadeUp .8s .75s ease both;
+}
+.socialsLabel { font-size: .75rem; color: rgba(255,255,255,.45); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
+.socialsDivider { width: 30px; height: 1px; background: rgba(255,255,255,.2); }
+.socialBtn {
+  width: 46px; height: 46px; border-radius: 12px;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.8); transition: all .2s; text-decoration: none;
+}
+.socialBtn:hover {
+  background: rgba(45,184,160,.35);
+  color: #fff;
+  border-color: rgba(45,184,160,.6);
+  transform: translateY(-3px);
+}
+.socialBtn svg { display: block; }
+
+.scrollHint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  animation: bounce 2s infinite; color: rgba(255,255,255,.4);
+}
+
+@media (max-width: 768px) {
+  .stats { gap: 1.5rem; }
+}
