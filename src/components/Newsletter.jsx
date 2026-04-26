@@ -6,12 +6,26 @@ export default function Newsletter() {
   const [error,      setError]      = useState('')
   const [subscribed, setSubscribed] = useState(false)
 
-  const handleSubscribe = () => {
-    if (!email) { setError('Please enter your email address.'); return }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('Please enter a valid email address.'); return }
-    setError('')
+  const handleSubscribe = async () => {
+  if (!email) { setError('Please enter your email address.'); return }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('Please enter a valid email.'); return }
+
+  setError('')
+  setLoading(true)
+
+  try {
+    const res = await fetch('/api/subscribe', {  // or /.netlify/functions/subscribe
+      method: 'POST',
+      body: JSON.stringify({ email }),
+    })
+    if (!res.ok) throw new Error()
     setSubscribed(true)
+  } catch {
+    setError('Something went wrong. Please try again.')
+  } finally {
+    setLoading(false)
   }
+}
 
   return (
     <section className={styles.section}>
