@@ -252,7 +252,7 @@ function Hero({ setPage }) {
           display: "flex", gap: 48, justifyContent: "center",
           marginTop: 64, flexWrap: "wrap"
         }}>
-          {[["500+", "Students Reached"], ["12", "Health Topics"], ["7", "Team Members"], ["3", "Partner Orgs"]].map(([n, l]) => (
+          {[["400k+", "Students Reached"], ["12", "Health Topics"], ["7", "Team Members"], ["3", "Partner Orgs"]].map(([n, l]) => (
             <div key={l} style={{ textAlign: "center" }}>
               <div style={{ color: COLORS.mint, fontSize: 36, fontWeight: 900 }}>{n}</div>
               <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14 }}>{l}</div>
