@@ -12,11 +12,11 @@ const COLORS = {
 const TEAM = [
   { name: "Laylah W.", role: "Founder & CEO", initials: "LW", color: "#2DB8A0" },
   { name: "Lee T.", role: "Vice President", initials: "LT", color: "#1A8F7A" },
+  { name: "Anirudh N.", role: "Chief Technology Officer", initials: "AN", color: "#0D2B3E" },
   { name: "Brycen W.", role: "Social Media Manager", initials: "BW", color: "#0D2B3E" },
   { name: "Ayla T.", role: "Leader of Writing & Research", initials: "AT", color: "#163D56" },
   { name: "Nicola K.", role: "Leader of Writing & Research", initials: "NK", color: "#2DB8A0" },
   { name: "Angel G.", role: "Leader of Art & Graphic Design", initials: "AG", color: "#1A8F7A" },
-  { name: "Anirudh N.", role: "Chief Technology Officer", initials: "AN", color: "#0D2B3E" },
 ];
 
 const BLOG_POSTS = [
