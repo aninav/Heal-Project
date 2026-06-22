@@ -1,121 +1,341 @@
+/* ============================================================
+   siteData.js — all content lives here.
+   To update anything on the site, edit this file only.
+   ============================================================ */
+
 export const COLORS = {
-  teal: '#2DB8A0',
-  tealDark: '#1A8F7A',
-  tealLight: '#E8F9F6',
-  tealMid: '#5ECDB8',
-  navy: '#0D2B3E',
-  navyLight: '#163D56',
-  mint: '#A8EDE2',
-  white: '#FFFFFF',
-  offWhite: '#F5FFFE',
-  gray: '#7A9090',
-  grayLight: '#EEF5F4',
-  accent: '#FF6B6B',
-  accentYellow: '#FFD166',
-  text: '#1A2E2B',
+  ink: "#16221D",
+  inkSoft: "#5C6B64",
+  line: "#D8E3DD",
+  paper: "#F3F8F6",
+  card: "#FFFFFF",
+  accent: "#0E6B53",
+  accentSoft: "#E4F1EC",
 };
 
+export const FONTS = {
+  serif: "'Source Serif 4', Georgia, 'Times New Roman', serif",
+  sans: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
+};
+
+/* ---------- Team ---------- */
+export const TEAM = [
+  { slug: "laylah-wolf", name: "Laylah Wolf", role: "Founder & CEO", bio: "Laylah founded The HEAL Project to bring free, stigma-free health education to teens everywhere. She leads strategy, partnerships, and the org's research direction." },
+  { slug: "lee-t", name: "Lee T.", role: "Vice President", bio: "Lee oversees day-to-day operations and helps coordinate programs across HEAL's chapters and initiatives." },
+  { slug: "brycen-w", name: "Brycen W.", role: "Social Media Manager", bio: "Brycen runs HEAL's social presence, helping spread free health resources to a wider teen audience." },
+  { slug: "ayla-t", name: "Ayla T.", role: "Leader of Writing & Research", bio: "Ayla co-leads HEAL's writing and research team, helping fact-check and develop original health content." },
+  { slug: "nicola-k", name: "Nicola K.", role: "Leader of Writing & Research", bio: "Nicola co-leads HEAL's writing and research team, focusing on nutrition and wellness content." },
+  { slug: "angel-g", name: "Angel G.", role: "Leader of Art & Graphic Design", bio: "Angel leads HEAL's visual identity and design work across the site and social channels." },
+  { slug: "anirudh-n", name: "Anirudh N.", role: "Chief Technology Officer", bio: "Anirudh manages HEAL's website and technical infrastructure." },
+  { slug: "dhanya-duvvuru", name: "Dhanya Duvvuru", role: "Writer & Researcher", bio: "Dhanya writes and researches original science and health explainers for The HEAL Project." },
+  { slug: "oyindamola-borisade", name: "Oyindamola Borisade", role: "Writer", bio: "Oyindamola contributes original research-based writing to The HEAL Project, with a focus on mental health topics." },
+];
+
+/* ---------- Nav ---------- */
 export const NAV_ITEMS = [
-  { label: 'Home',         id: 'home' },
-  { label: 'About',        id: 'about' },
-  { label: 'Programs',     id: 'programs' },
-  { label: 'Learn',        id: 'learn' },
-  { label: 'Get Involved', id: 'involved' },
+  ["Home", "home"],
+  ["Programs", "programs"],
+  ["Journal", "blog"],
+  ["Team", "team"],
+  ["Chapters", "chapters"],
+  ["Fellowship", "fellowship"],
+  ["Partners", "partners"],
+  ["Get Involved", "involved"],
 ];
 
-export const SOCIAL_LINKS = [
-  {
-    href: 'https://www.instagram.com/thehealproject48/',
-    label: 'Instagram',
-    svg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`,
-  },
-  {
-    href: 'https://www.tiktok.com/@thehealproject48',
-    label: 'TikTok',
-    svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>`,
-  },
-  {
-    href: 'https://www.youtube.com/@thehealproject48/videos',
-    label: 'YouTube',
-    svg: `<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>`,
-  },
-  {
-    href: 'https://www.pinterest.com/thehealproject48/',
-    label: 'Pinterest',
-    svg: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>`,
-  },
-];
-
+/* ---------- Hero stats ---------- */
 export const HERO_STATS = [
-  { num: '20%',  label: 'Teens with unmet\nmental health needs' },
-  { num: '50%',  label: 'U.S. high schools teaching\nall health topics' },
-  { num: 'Free', label: 'All HEAL resources,\nalways' },
-  { num: '2025', label: 'Year we were\nfounded' },
+  ["500+", "Students reached"],
+  ["12", "Health topics"],
+  ["9", "Team & writers"],
+  ["3", "Partner orgs"],
 ];
 
+/* ---------- Programs ---------- */
 export const PROGRAMS = [
-  { icon: '🧠', color: '#EEF4FF', title: 'Mental Health Education',   badge: 'Most Popular', desc: 'Learn to recognize signs, reduce stigma, and access mental health resources with confidence.' },
-  { icon: '🥗', color: '#F0FEF4', title: 'Nutrition & Wellness',       desc: 'Practical guides on balanced eating, understanding labels, and building healthy relationships with food.' },
-  { icon: '🔬', color: '#FFF8EE', title: 'STEM Health Careers',        desc: 'Explore pathways into medicine, nursing, public health, and research through our career exploration content.' },
-  { icon: '❤️', color: '#FFF0F0', title: 'Sexual Health & Safety',     desc: 'Inclusive, science-based education on reproductive health, consent, and relationships.' },
-  { icon: '💊', color: '#F5F0FF', title: 'Healthcare Navigation',      desc: 'Learn how to access healthcare, understand your rights, and advocate for yourself in medical settings.' },
-  { icon: '🌍', color: '#E8FFF8', title: 'Global Health Equity',       desc: 'Understand health disparities, social determinants of health, and how to get involved in advocacy.' },
+  { title: "Peer Education", desc: "Teen educators trained to deliver health workshops in schools and community centers." },
+  { title: "Wellness Workshops", desc: "Interactive sessions covering mental health, nutrition, sleep, and more." },
+  { title: "Resource Library", desc: "Free downloadable guides, toolkits, and fact sheets on every health topic." },
+  { title: "Community Chapters", desc: "Start or join a HEAL chapter at your school and bring health education to your peers." },
+  { title: "Speaker Series", desc: "Monthly virtual events with health professionals, advocates, and change-makers." },
+  { title: "Challenge Program", desc: "30-day wellness challenges designed to build healthy habits one day at a time." },
 ];
 
+/* ---------- Health topics ---------- */
 export const TOPICS = [
-  { emoji: '🧠', name: 'Mental Health',  color: '#EEF4FF', desc: 'Learn to identify stress, anxiety, depression, and other mental health challenges. Find coping strategies, understand when to seek help, and reduce stigma.', facts: ['1 in 5 teens experiences a mental health disorder', 'Only 20% of those receive proper care', 'Early intervention greatly improves outcomes'], resources: ['Stress & Anxiety Guide', 'Mindfulness 101', 'When to Talk to a Counselor'] },
-  { emoji: '🍎', name: 'Nutrition',       color: '#F0FEF4', desc: 'Understand macros, micronutrients, how to read food labels, and build a balanced diet that actually works for your lifestyle.', facts: ['Only 1 in 10 teens eat enough fruits & vegetables', 'Diet directly impacts mood and brain function', 'Skipping breakfast affects focus and memory'], resources: ['Balanced Plate Guide', 'Reading Food Labels', 'Healthy Eating on a Budget'] },
-  { emoji: '💤', name: 'Sleep',           color: '#F5F0FF', desc: 'Discover why sleep is non-negotiable for teen brain development, mood regulation, and physical health — and how to get more of it.', facts: ['Teens need 8–10 hours of sleep per night', 'Most teens get fewer than 7 hours', 'Sleep deprivation affects memory and mood significantly'], resources: ['Sleep Hygiene Checklist', 'Screen Time & Sleep', 'Understanding Your Sleep Cycle'] },
-  { emoji: '🏃', name: 'Exercise',        color: '#FFF8EE', desc: 'From beginner workouts to understanding sports injuries, learn how movement benefits your mental and physical health.', facts: ['Only 24% of teens get recommended daily activity', 'Exercise reduces anxiety as effectively as medication in some cases', '30 minutes/day improves focus and mood'], resources: ['Beginner Workout Guide', 'Exercise & Mental Health', 'Sports Safety Tips'] },
-  { emoji: '❤️', name: 'Sexual Health',  color: '#FFF0F0', desc: 'Inclusive, science-based information on reproductive health, consent, relationships, contraception, and STI prevention.', facts: ['50% of STIs occur in people aged 15–24', 'Only 4 in 10 high schools teach consent education', 'Access to sex ed reduces teen pregnancy rates'], resources: ['Consent & Boundaries', 'Contraception 101', 'STI Prevention Guide'] },
-  { emoji: '💊', name: 'Medications',     color: '#F0FFF8', desc: 'Learn how common medications work, safe usage, drug interactions, and how to talk to your doctor about prescriptions.', facts: ['Over 25% of teens misuse prescription medications', 'Drug interactions can be life-threatening', 'Always read medication labels carefully'], resources: ['OTC Medication Guide', 'Talking to Your Doctor', 'Medication Safety Tips'] },
-  { emoji: '🦷', name: 'Oral Health',     color: '#FFFBEE', desc: 'Oral health is a window to your overall health. Learn about hygiene habits, nutrition\'s role, and dental care access.', facts: ['Tooth decay is the #1 chronic disease in teens', 'Poor oral health is linked to heart disease', 'Brushing twice daily prevents 80% of cavities'], resources: ['Daily Oral Care Routine', 'Diet & Dental Health', 'Finding Affordable Dental Care'] },
-  { emoji: '👁️', name: 'Eye Health',     color: '#EEF8FF', desc: 'Understand how screen time, nutrition, and lifestyle affect your vision, and what symptoms should prompt a check-up.', facts: ['Myopia (nearsightedness) has doubled in teens since 1970', '2+ hours outdoors per day reduces myopia risk', 'Screen breaks help more than blue light glasses'], resources: ['Screen Time & Eyes', 'Eye Nutrition Guide', 'When to See an Eye Doctor'] },
-  { emoji: '🫁', name: 'Respiratory',     color: '#F0FEFF', desc: 'From asthma management to understanding air quality and the effects of vaping, keep your lungs healthy.', facts: ['Asthma affects 1 in 12 teens', 'Vaping causes irreversible lung damage in young people', 'Air quality directly impacts asthma and allergy symptoms'], resources: ['Asthma Management 101', 'Vaping: The Real Risks', 'Air Quality & Your Health'] },
-  { emoji: '🧬', name: 'Genetics',        color: '#FFF0FB', desc: 'Explore how your genes influence health risks, what genetic testing means, and how family history guides prevention.', facts: ['Family history is one of the strongest health risk factors', 'Many genetic conditions are manageable with early knowledge', 'Epigenetics shows lifestyle can change how genes express'], resources: ['Family Health History Guide', 'Genetics & Chronic Disease', 'Understanding Genetic Testing'] },
-  { emoji: '💉', name: 'Vaccines',         color: '#F5FFF0', desc: 'Get the facts on how vaccines work, which ones teens need, and how immunization protects communities.', facts: ['Vaccines prevent 2–3 million deaths globally each year', 'HPV vaccine prevents 90% of HPV-related cancers', 'Vaccine ingredients are rigorously safety-tested'], resources: ['Teen Vaccine Schedule', 'How Vaccines Work', 'Addressing Common Vaccine Myths'] },
-  { emoji: '🩺', name: 'Doctor Visits',   color: '#FFF5F0', desc: 'Know your rights, how to prepare for appointments, what questions to ask, and how to access care even without insurance.', facts: ['60% of teens skip annual checkups', 'Most states allow teens to consent to some care independently', 'Preventive care reduces long-term healthcare costs dramatically'], resources: ['How to Prepare for an Appointment', 'Your Healthcare Rights', 'Finding Free or Low-Cost Care'] },
+  "Mental Health", "Nutrition", "Sexual Health", "Sleep & Rest",
+  "Fitness", "Digital Wellness", "Substance Awareness", "Body Image",
+  "Relationships", "Stress Management", "First Aid", "Chronic Illness",
 ];
 
-export const ARTICLES = [
-  { tag: 'Mental Health', emoji: '🧠', bg: '#EEF4FF', title: '5 Signs You Should Talk to Someone About Your Mental Health', excerpt: 'Persistent mood changes and withdrawal from activities are key indicators.', author: 'AK', name: 'Aisha K.',  date: 'Apr 15' },
-  { tag: 'Nutrition',     emoji: '🥦', bg: '#F0FEF4', title: 'What Teens Actually Need to Know About Processed Food',       excerpt: 'Understanding ingredient labels can change how you make food choices forever.', author: 'MJ', name: 'Marcus J.', date: 'Apr 8'  },
-  { tag: 'Sleep Science', emoji: '🌙', bg: '#F5F0FF', title: 'Why Your Brain Needs More Sleep Than You Think',               excerpt: 'During adolescence, your brain is literally rewiring — and sleep is when it does most of that work.', author: 'SL', name: 'Sofia L.',  date: 'Mar 28' },
-];
-
-export const TOOLKITS = [
-  { emoji: '📋', title: 'Mental Health Check-In Kit',    desc: 'Self-assessment tools & resource guide' },
-  { emoji: '🥗', title: 'Nutrition 101 Toolkit',          desc: 'Meal planning & label reading guides' },
-  { emoji: '🏥', title: 'Healthcare Navigation Guide',    desc: 'Know your rights & how to advocate' },
-  { emoji: '📚', title: 'STEM Career Exploration Pack',   desc: 'Career paths, scholarships & mentors' },
-  { emoji: '🧬', title: 'Genetics & Heredity Guide',      desc: 'Family health history resources' },
-  { emoji: '🤝', title: 'Community Health Toolkit',       desc: 'Start a chapter & health advocacy' },
-];
-
-export const HABITS = [
-  { emoji: '💧', label: 'Drink 8 glasses of water' },
-  { emoji: '🏃', label: '30 minutes of movement' },
-  { emoji: '😴', label: '8+ hours of sleep' },
-  { emoji: '🧘', label: '5-minute mindfulness' },
-  { emoji: '🥦', label: 'Eat a fruit or vegetable' },
-  { emoji: '📵', label: '1 hour screen-free time' },
-];
-
-export const QUIZ_DATA = [
-  { question: 'How many hours of sleep do teens (13–18) generally need per night?',          options: ['6–7 hours', '8–10 hours', '10–12 hours', '5–6 hours'],              correct: 1, explanation: 'Teens need 8–10 hours per night for optimal physical and mental health, per the American Academy of Sleep Medicine.' },
-  { question: 'Which vitamin does our skin produce when exposed to sunlight?',                 options: ['Vitamin A', 'Vitamin C', 'Vitamin D', 'Vitamin K'],                  correct: 2, explanation: 'The skin synthesizes Vitamin D when exposed to UVB rays. It\'s crucial for bone health and immune function.' },
-  { question: 'What percentage of the human body is made up of water?',                       options: ['About 40%', 'About 50%', 'About 60%', 'About 80%'],                  correct: 2, explanation: 'The adult human body is approximately 60% water. Staying hydrated is essential for all bodily functions.' },
-  { question: 'What is the recommended daily step count for general health?',                  options: ['3,000 steps', '5,000 steps', '10,000 steps', '15,000 steps'],        correct: 2, explanation: '10,000 steps per day is a widely recommended target for maintaining good cardiovascular health.' },
-  { question: 'Which of these is a sign of a mental health concern worth talking about?',      options: ['Feeling sad once', 'Persistent sadness or withdrawal', 'Being tired after exercise', 'Having a bad day'], correct: 1, explanation: 'Persistent changes in mood or withdrawal from friends are signs worth discussing with a trusted adult or counselor.' },
-];
-
-export const INVOLVED_CARDS = [
-  { title: 'Volunteer With Us',    desc: 'Join our team as a content creator, event organizer, or outreach volunteer.',             btn: 'Apply Now',       bg: 'linear-gradient(135deg, #0D2B3E 0%, #1A6B5A 100%)' },
-  { title: 'Start a Chapter',      desc: 'Bring HEAL to your school or community — we\'ll support you every step of the way.',      btn: 'Learn How',       bg: 'linear-gradient(135deg, #1A8F7A 0%, #2DB8A0 100%)' },
-  { title: 'Join a Challenge',     desc: 'Participate in our health education challenges and win recognition for your work.',        btn: 'See Challenges',  bg: 'linear-gradient(135deg, #163D56 0%, #2DB8A0 100%)' },
-];
-
+/* ---------- Partners ---------- */
 export const PARTNERS = [
-  'MIND Global Project', 'Project MARS', 'Foods For Good',
-  'Teen Health Alliance', 'Youth STEM Network', 'Community Health Fund',
+  { name: "Food for Good", desc: "Fighting food insecurity in our communities." },
+  { name: "M.I.K.D. Youth Empowerment Network", desc: "Empowering youth through mentorship and community." },
+  { name: "M.O.R.S.", desc: "Mental health and wellness advocacy." },
+];
+
+/* ---------- Get Involved ---------- */
+export const INVOLVED_CARDS = [
+  { title: "Volunteer", desc: "Join our team of peer educators and help deliver workshops in your community." },
+  { title: "Start a chapter", desc: "Bring HEAL to your school. We'll give you everything you need to get started." },
+  { title: "Join a challenge", desc: "Take our 30-day wellness challenges and build habits that last." },
+];
+
+/* ---------- Chapter leaders ---------- */
+export const CHAPTER_LEADERS = [
+  { name: "Maya Chen", location: "Plano, TX, USA", region: "Texas", instagram: "@heal.plano", blurb: "Started a HEAL chapter at my high school to make sure health class actually covers what students need to know." },
+  { name: "Jordan Reyes", location: "Sacramento, CA, USA", region: "California", instagram: "@heal.sacramento", blurb: "I want students at my school to feel comfortable asking questions about their health without judgment." },
+  { name: "Priya Nair", location: "Edison, NJ, USA", region: "New Jersey", instagram: null, blurb: "Coming soon!" },
+  { name: "Caleb Owusu", location: "Atlanta, GA, USA", region: "Georgia", instagram: "@heal.atl", blurb: "Health education shouldn't depend on which school you go to. I'm working to close that gap in my community." },
+  { name: "Sofia Marquez", location: "Toronto, ON, Canada", region: "Canada", instagram: "@heal.toronto", blurb: "Bringing HEAL workshops to my school's wellness club, focused on mental health and sleep." },
+  { name: "Ezra Klein", location: "Columbus, OH, USA", region: "Ohio", instagram: null, blurb: "Coming soon!" },
+];
+
+export const REGIONS = ["All", ...Array.from(new Set(CHAPTER_LEADERS.map(c => c.region))).sort()];
+
+/* ---------- Fellowship ---------- */
+export const FELLOWSHIP = {
+  name: "Summer Research Fellowship 2026",
+  tagline: "Expanding Access to Student Research and Scientific Innovation",
+  partner: "A joint program with Project MARS",
+  dates: "June 30 \u2013 August 5, 2026",
+  format: "Fully virtual via Zoom / Google Meet",
+  commitment: [
+    "6 hours/week for general sessions",
+    "2\u20133 hours/week for guest speakers and mentor meetings",
+    "2\u20134 hours/week for independent research and assignments",
+  ],
+  goals: [
+    "Learn to read, synthesize, and critique research papers",
+    "Build experimental and research design skills",
+    "Develop a symposium-ready presentation poster",
+    "Optionally write a full research paper for potential publication",
+  ],
+  weeks: [
+    { title: "Week 1: Foundations", desc: "Find a research interest, learn to read papers, identify a research gap, form a research question, and get matched with a mentor." },
+    { title: "Week 2: Building the project", desc: "Choose a research type (review, computational, or experimental), gather data, and draft a research proposal and abstract." },
+    { title: "Week 3: Analysis", desc: "Analyze data, draw conclusions, and begin the poster and paper with peer feedback and writing support." },
+    { title: "Week 4: Finalization", desc: "Finish the presentation, paper, and poster. Optional entrepreneurship workshops." },
+    { title: "Week 5: Summit", desc: "Networking, peer review, and the final research presentation summit." },
+  ],
+  deliverables: [
+    "Attendance and active participation in sessions and mentor meetings",
+    "A completed research project (review, computational, or experimental)",
+    "A final research poster",
+    "A final presentation at the Research Summit",
+  ],
+  optional: [
+    "Expanding the project into a full research paper",
+    "Submitting to high school research journals or youth STEM publications",
+    "Adapting the project for science fairs or research competitions",
+  ],
+  contacts: ["med.assoc.research.science@gmail.com", "thehealproject48@gmail.com"],
+};
+
+/* ---------- Articles ---------- */
+export const ARTICLES = [
+  {
+    id: "teen-mental-health",
+    title: "Understanding Teen Mental Health: What Every Student Should Know",
+    dek: "Mental health is just as important as physical health, yet many teens don't know where to turn when they're struggling.",
+    category: "Mental Health",
+    author: "Ayla T.",
+    researcher: "Ayla T.",
+    readTime: "5 min read",
+    body: [
+      { type: "p", text: "Mental health is just as important as physical health, yet many teens don't know where to turn when they're struggling. Anxiety, depression, and stress are common experiences during adolescence, but that doesn't mean you have to face them alone." },
+      { type: "h", text: "Signs to watch for" },
+      { type: "p", text: "Persistent sadness lasting more than two weeks, withdrawal from friends and activities, changes in sleep or appetite, difficulty concentrating, and feelings of hopelessness can all be signs that someone needs support. If you notice these signs in yourself or a friend, reaching out is the bravest thing you can do." },
+      { type: "h", text: "Where to find support" },
+      { type: "p", text: "Resources available to teens include school counselors, crisis text lines, and trusted adults in your life. Remember: asking for help is a sign of strength, not weakness." },
+      { type: "h", text: "Building resilience" },
+      { type: "p", text: "Building resilience starts with small habits: regular sleep, movement, limiting social media, and staying connected to people who uplift you. The HEAL Project is here to support every step of your wellness journey." },
+    ],
+  },
+  {
+    id: "nutrition-101",
+    title: "Nutrition 101: Fueling Your Body for Success",
+    dek: "What you eat directly impacts your energy, focus, and mood. Here are the basics of teen nutrition, without the diet culture noise.",
+    category: "Nutrition",
+    author: "Nicola K.",
+    researcher: "Nicola K.",
+    readTime: "4 min read",
+    body: [
+      { type: "p", text: "What you eat directly impacts your energy, focus, and mood. Teen bodies are growing rapidly and need consistent, balanced fuel \u2014 not crash diets or skipping meals." },
+      { type: "h", text: "The basics" },
+      { type: "p", text: "Aim for a colorful plate: half vegetables and fruits, a quarter protein (eggs, beans, chicken, tofu), and a quarter whole grains. Don't fear carbohydrates \u2014 your brain runs on glucose." },
+      { type: "h", text: "Hydration matters" },
+      { type: "p", text: "Most teens are chronically dehydrated, which leads to fatigue and poor concentration. Aim for about 8 glasses of water daily, more if you're active." },
+      { type: "h", text: "Smart snacking" },
+      { type: "p", text: "Choose snacks that combine protein and carbs \u2014 apple with peanut butter, hummus with crackers, or yogurt with berries. These combinations keep blood sugar stable and energy consistent." },
+      { type: "h", text: "A note on diet culture" },
+      { type: "p", text: "Your body is not a problem to be solved. Focus on nourishment, not restriction. If you're concerned about your relationship with food, talk to a trusted adult or healthcare provider." },
+    ],
+  },
+  {
+    id: "sleep-science",
+    title: "Sleep Science: Why Teens Need More Than They Think",
+    dek: "Teenagers need 8\u201310 hours of sleep per night, but most get far less. Here's what sleep deprivation actually does to your body.",
+    category: "Sleep & Rest",
+    author: "Ayla T.",
+    researcher: "Ayla T.",
+    readTime: "6 min read",
+    body: [
+      { type: "p", text: "Teenagers need 8\u201310 hours of sleep per night, but national surveys show the average teen gets only 6\u20137. This isn't just about being tired \u2014 chronic sleep deprivation has serious consequences." },
+      { type: "h", text: "What sleep loss affects" },
+      { type: "p", text: "Sleep deprivation affects memory consolidation, mood regulation, immune function, metabolism, and athletic performance. Every system in your body suffers." },
+      { type: "h", text: "Why teens stay up late" },
+      { type: "p", text: "Biology actually shifts the circadian rhythm during puberty, making it harder to fall asleep before 11pm. Early school start times work against this biology, which is why sleep advocacy organizations push for later school starts." },
+      { type: "h", text: "Better sleep habits" },
+      { type: "p", text: "A consistent wake time (even on weekends), no screens 30 minutes before bed, a cool and dark room, avoiding caffeine after 2pm, and a wind-down routine all help. Small changes compound over time into significantly better rest." },
+    ],
+  },
+  {
+    id: "sexual-health-stigma",
+    title: "Breaking the Stigma: Talking About Sexual Health",
+    dek: "Sexual health is health. Here's the honest, judgment-free information every teen deserves to have.",
+    category: "Sexual Health",
+    author: "Nicola K.",
+    researcher: "Nicola K.",
+    readTime: "5 min read",
+    body: [
+      { type: "p", text: "Sexual health is health. Despite this, many teens receive incomplete or shame-based education, leaving them without the knowledge to make informed decisions." },
+      { type: "h", text: "Contraception basics" },
+      { type: "p", text: "Multiple options exist, from condoms (which also protect against STIs) to hormonal methods. Talking to a healthcare provider helps determine what's right for you." },
+      { type: "h", text: "STI prevention" },
+      { type: "p", text: "Condoms significantly reduce transmission risk. Regular testing is recommended for sexually active teens \u2014 it's a normal part of healthcare, not something to be ashamed of." },
+      { type: "h", text: "Consent" },
+      { type: "p", text: "Consent is foundational: enthusiastic, ongoing, and freely given. Consent can be withdrawn at any time. Healthy relationships are built on mutual respect and communication." },
+      { type: "p", text: "If you don't feel safe talking to a parent, consider a school counselor or doctor. You deserve accurate information." },
+    ],
+  },
+  {
+    id: "movement-as-medicine",
+    title: "Movement as Medicine: Exercise for Teen Mental Health",
+    dek: "Exercise isn't just about physical fitness \u2014 it's one of the most powerful tools for mental health. And you don't need a gym.",
+    category: "Fitness",
+    author: "Lee T.",
+    researcher: "Lee T.",
+    readTime: "4 min read",
+    body: [
+      { type: "p", text: "Exercise isn't just about physical fitness \u2014 it's one of the most powerful tools for mental health. Research consistently shows that regular movement reduces anxiety and depression symptoms, improves sleep, and boosts self-esteem." },
+      { type: "h", text: "How it works" },
+      { type: "p", text: "Exercise releases endorphins, reduces cortisol (the stress hormone), increases brain-derived neurotrophic factor (BDNF) which supports brain health, and creates a sense of accomplishment." },
+      { type: "h", text: "You don't need a gym" },
+      { type: "p", text: "Walking, dancing, yoga, bike riding, swimming, and playing with pets all count. The best exercise is the one you'll actually do consistently. The goal isn't perfection \u2014 it's consistency." },
+      { type: "h", text: "Body-neutral fitness" },
+      { type: "p", text: "Exercise is not punishment for eating. It's a gift you give your future self. Focus on how movement makes you feel, not how it makes you look." },
+    ],
+  },
+  {
+    id: "social-media-self-image",
+    title: "Social Media & Self-Image: Setting Healthy Boundaries",
+    dek: "Social media can be a powerful community tool or a comparison trap. Here's how to use it in a way that supports rather than harms your self-image.",
+    category: "Digital Wellness",
+    author: "Brycen W.",
+    researcher: "Brycen W.",
+    readTime: "5 min read",
+    body: [
+      { type: "p", text: "Social media can be a powerful community tool or a comparison trap. Research shows a correlation between heavy social media use and lower self-esteem, increased anxiety, and poor body image \u2014 particularly in teenage girls." },
+      { type: "h", text: "The comparison trap" },
+      { type: "p", text: "You're seeing everyone's highlight reel, not their reality. Filters, editing, and selective posting create an impossible standard. Even the people whose lives look perfect online are struggling in ways you can't see." },
+      { type: "h", text: "Audit your feed" },
+      { type: "p", text: "Does it make you feel inspired or inadequate? You have the power to unfollow, mute, and curate an environment that builds you up. Fill your feed with accounts that celebrate diversity, education, and real life." },
+      { type: "h", text: "Setting limits" },
+      { type: "p", text: "Screen time apps can help. Many teens report feeling better within a week of reducing social media use. Try a weekend digital detox and notice how you feel." },
+    ],
+  },
+  {
+    id: "brain-freeze",
+    title: "The Science of the \u201CBrain Freeze\u201D: Why Ice Cream Sometimes Hurts",
+    dek: "It feels like your brain is turning into an ice cube \u2014 but there's a lot of cool science behind the sting.",
+    category: "Neuroscience",
+    author: "Dhanya Duvvuru",
+    researcher: "Dhanya Duvvuru",
+    readTime: "5 min read",
+    body: [
+      { type: "p", text: "It is a hot summer day, and you just bought the world\u2019s best slushie or a giant scoop of chocolate-cherry ice cream. You take a huge, excited bite, and suddenly: BAM! It feels like a lightning bolt just hit your forehead. Your head is stinging, and for a few seconds, you have to stop everything." },
+      { type: "p", text: "You\u2019ve just been hit by a Brain Freeze. Scientists have a very long, fancy name for it: sphenopalatine ganglioneuralgia." },
+      { type: "h", text: "Why does it happen?" },
+      { type: "p", text: "Your brain acts like a thermostat to keep your head at the perfect temperature. When you eat something freezing cold too fast, it touches the roof of your mouth (your palate) and your throat, triggering a survival reflex." },
+      { type: "ol", items: [
+        "The Squeeze: Your blood vessels shrink down small (vasoconstriction) to keep your core heat inside.",
+        "The Rush: Your body realizes the area is too cold and rushes warm blood back. Your blood vessels open up really wide and fast (vasodilation).",
+      ]},
+      { type: "p", text: "This happens right next to the trigeminal nerve, a telephone wire that carries signals from your face to your brain. The rapid vessel changes send a burst of activity straight to your brain." },
+      { type: "h", text: "The brain's big mistake" },
+      { type: "p", text: "Even though the cold is in your mouth, your brain gets confused \u2014 this is called referred pain. Because the trigeminal nerve covers your whole face, your brain thinks the pain is coming from your forehead, temples, or behind your eyes." },
+      { type: "h", text: "Who gets it?" },
+      { type: "ul", items: [
+        "Kids: More eager to finish a popsicle fast than adults \u2014 not because their brains are different.",
+        "Animals: Cats can get brain freeze too if they eat something cold too quickly.",
+        "Migraine sufferers: More likely to have sensitive nerves that react strongly to cold.",
+      ]},
+      { type: "h", text: "How to stop it" },
+      { type: "ul", items: [
+        "Press your warm tongue against the roof of your mouth.",
+        "Press your thumb against the roof of your mouth to transfer heat.",
+        "Sip room-temperature or warm water.",
+        "Next time: warm the ice cream briefly at the front of your mouth before swallowing.",
+      ]},
+      { type: "p", text: "Brain freezes are totally harmless and usually gone in 30 seconds. Aspirin won't help \u2014 it doesn't even reach your stomach before the pain is over." },
+    ],
+  },
+  {
+    id: "cbt-vs-medication",
+    title: "Is Cognitive Behavioral Therapy Better Than Medication When Treating Mental Disorders?",
+    dek: "A close look at how CBT and psychiatric medications work, why each can fail, and how the right choice depends on the person.",
+    category: "Mental Health",
+    author: "Oyindamola Borisade",
+    researcher: "Laylah Wolf",
+    readTime: "12 min read",
+    body: [
+      { type: "h2", text: "Abstract" },
+      { type: "p", text: "This paper discusses the pros and cons of Cognitive Behavioral Therapy and different medications when treating mental disorders and illnesses. It asks: which is better, CBT or medications like antidepressants and antipsychotics? The answer depends on the patient and their preferences. Both approaches have strengths and limitations \u2014 broadly, they are equal." },
+      { type: "h", text: "What is CBT?" },
+      { type: "p", text: "Cognitive Behavioral Therapy is a goal-oriented, structured form of psychotherapy that helps people understand how thoughts influence feelings and actions. CBT is based on the idea that thoughts affect emotions, emotions affect behaviors, and behaviors reinforce thoughts." },
+      { type: "p", text: "The four main forms of CBT:" },
+      { type: "ul", items: [
+        "Mindfulness-Based Cognitive Therapy (MBCT): combines behavioral therapy with mindfulness techniques. Used for anxiety and depression.",
+        "Dialectical Behavioral Therapy (DBT): focuses on living in the moment, regulating emotions, and improving relationships. Often used for BPD and PTSD.",
+        "Rational Emotive Behavior Therapy (REBT): teaches coping mechanisms for irrational thoughts and promotes self-acceptance. Used for anxiety, depression, and PTSD.",
+        "Acceptance and Commitment Therapy (ACT): relies on positive reinforcement and counter-conditioning. Used for anxiety and panic disorder.",
+      ]},
+      { type: "h", text: "How does CBT work?" },
+      { type: "p", text: "Developed by Dr. Aaron Beck in the 1960s, CBT operates on the idea that our thoughts shape our feelings and behaviors. The brain forms shortcuts \u2014 habit loops \u2014 stored in the basal ganglia that run automatically. CBT uses cognitive restructuring to build new, healthier shortcuts using techniques like journaling, exposure therapy, behavioral activation, and art." },
+      { type: "h", text: "Why CBT works" },
+      { type: "p", text: "CBT works because most emotional and behavioral reactions are learned and can be unlearned. It focuses on present feelings and uses structured techniques like thought diaries \u2014 logs of negative thoughts that help patients recognize patterns, develop coping mechanisms, and build emotional regulation. It is highly evidence-based, allowing therapists to track and adjust what's working." },
+      { type: "h", text: "Why CBT doesn't always work" },
+      { type: "p", text: "CBT struggles to fully address the root of unresolved trauma, which creates nervous system triggers that thought-pattern changes alone can't settle. It also relies heavily on client self-awareness, which can be difficult for someone deep in a depressive episode. And its foundational model \u2014 that mental illness stems from faulty thinking \u2014 can make it difficult to distinguish between temporary and disordered thinking patterns." },
+      { type: "h2", text: "Medical treatments for mental disorders" },
+      { type: "h", text: "The four main medication categories" },
+      { type: "ul", items: [
+        "Antidepressants: primarily for depression, also used for anxiety, PTSD, MDD, and OCD.",
+        "Antipsychotics: used to treat psychosis (delusions, paranoia, hallucinations) in schizophrenia, bipolar disorder, and BPD.",
+        "Anti-anxiety medications (anxiolytics): includes benzodiazepines, SSRIs, beta-blockers, and azapirones.",
+        "Mood stabilizers: balance mood swings in bipolar disorder, schizoaffective disorder, and BPD.",
+      ]},
+      { type: "h", text: "How antipsychotics work" },
+      { type: "p", text: "Antipsychotics alter brain chemistry by affecting neurotransmitters \u2014 chemicals that carry messages between neurons. They primarily regulate dopamine (and sometimes serotonin), reducing symptoms like hallucinations, delusions, paranoia, and incoherent speech. First-generation antipsychotics target dopamine; second-generation target both dopamine and serotonin; next-generation act on acetylcholine receptors and are still under evaluation." },
+      { type: "h", text: "How antidepressants work" },
+      { type: "p", text: "Antidepressants increase levels of serotonin, norepinephrine, and dopamine, helping reduce sadness, low energy, and loss of interest. Different subtypes target different neurotransmitters: SNRIs block norepinephrine reuptake to enhance cognitive flexibility and mood; SSRIs target serotonin. Their versatility also makes them effective for eating disorders, chronic nerve pain, and menopausal symptoms." },
+      { type: "h", text: "Why medications don't always work" },
+      { type: "p", text: "The most common reason is adherence \u2014 patients stopping medication due to side effects, underestimating symptoms, or substance use. About one third of schizophrenia patients are treatment-resistant. Studies show roughly 75% of people discontinue medication within 18\u201320 months due to effects like weight gain, sexual dysfunction, and movement disorders. Mixing medications with alcohol or other substances can also distort their effects and increase dependency." },
+      { type: "h2", text: "Conclusion" },
+      { type: "p", text: "Whether CBT or medication is better depends on condition, preferences, timeline, and mindset. CBT offers long-lasting benefits: thought management, emotional regulation, reduced relapse rates, and resilience. Medication offers faster relief from acute symptoms. Medication may suit conditions like IED, BPD, Panic Disorder, and MDD; CBT may suit depression, anxiety, PTSD, and OCD. Outside those tendencies, they are roughly equal. The right choice depends entirely on the patient." },
+      { type: "h2", text: "Sources" },
+      { type: "ul", items: [
+        "Treatment Options: CBT or Medication \u2014 ABCT",
+        "Why CBT Works \u2014 East Side CBT",
+        "Cognitive Behavior Therapy \u2014 StatPearls, NCBI Bookshelf",
+        "Why CBT Does Not Work: Understanding Its Limitations",
+        "Antipsychotic Medications \u2014 Better Health Channel",
+        "Understanding the Distinction Between Antipsychotics and Antidepressants \u2014 MedShun",
+        "Norepinephrine Reuptake Inhibitors, Selective \u2014 Drug Class, Uses, Side Effects",
+        "Understanding the Pros and Cons of Antidepressants",
+        "Antidepressants: Not Just for Mood Disorders \u2014 Harvard Health",
+      ]},
+    ],
+  },
 ];
