@@ -1,71 +1,72 @@
-import { HERO_STATS, SOCIAL_LINKS } from '../data/siteData'
-import styles from './Hero.module.css'
+import { Container, Kicker, INK, INK_SOFT, LINE, SANS, SERIF } from "./UI";
+import { HERO_STATS } from "../data/siteData";
 
-export default function Hero({ onScrollTo }) {
+export default function Hero({ setPage }) {
   return (
-    <section id="home" className={styles.hero}>
-      <div className={styles.bgCircles}>
-        {[
-          { w: 500, h: 500, top: '-150px', left: '-200px', delay: '0s' },
-          { w: 350, h: 350, bottom: '-100px', right: '-100px', delay: '2s' },
-          { w: 250, h: 250, top: '30%', right: '15%', delay: '4s' },
-        ].map((c, i) => (
-          <div key={i} className={styles.circle} style={{ width: c.w, height: c.h, top: c.top, bottom: c.bottom, left: c.left, right: c.right, animationDelay: c.delay }} />
-        ))}
-      </div>
-
-      <div className={styles.content}>
-        <div className={styles.badge}>
-          <span className={styles.badgeDot} />
-          Student-Led · Nonprofit · Founded 2025
+    <section style={{ padding: "96px 0 88px", borderBottom: `1px solid ${LINE}` }}>
+      <Container>
+        <div style={{ maxWidth: 720 }}>
+          <Kicker>Student-led nonprofit &middot; Est. 2024</Kicker>
+          <h1 style={{
+            fontFamily: SERIF, fontWeight: 400,
+            fontSize: "clamp(40px, 7vw, 68px)",
+            color: INK, lineHeight: 1.05,
+            letterSpacing: "-0.02em", margin: "0 0 28px",
+          }}>
+            Health education,<br />by teens, for teens.
+          </h1>
+          <p style={{
+            fontFamily: SANS, fontSize: 19, lineHeight: 1.7,
+            color: INK_SOFT, maxWidth: 560, margin: "0 0 40px",
+          }}>
+            The HEAL Project is the Health Education Access League &mdash; a free,
+            stigma-free resource built by students, for students, covering the topics
+            health class leaves out.
+          </p>
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+            <button
+              onClick={() => setPage("blog")}
+              style={{
+                fontFamily: SANS, background: INK, color: "#fff", border: "none",
+                padding: "14px 28px", fontSize: 15, fontWeight: 500, borderRadius: 4,
+              }}
+            >
+              Read the journal
+            </button>
+            <button
+              onClick={() => setPage("involved")}
+              style={{
+                fontFamily: SANS, background: "none", color: INK,
+                border: `1px solid ${LINE}`,
+                padding: "14px 28px", fontSize: 15, fontWeight: 500, borderRadius: 4,
+              }}
+            >
+              Get involved
+            </button>
+          </div>
         </div>
 
-        <h1 className={styles.title}>
-          Health Education<br />
-          <span>Access League</span>
-        </h1>
-
-        <p className={styles.sub}>
-          Making healthcare knowledge accessible, accurate, and empowering for every teen — regardless of background, zip code, or income.
-        </p>
-
-        <div className={styles.buttons}>
-          <button className="btn-primary" onClick={() => onScrollTo('learn')}>Explore Resources</button>
-          <button className="btn-outline" onClick={() => onScrollTo('about')}>Our Mission</button>
-        </div>
-
-        <div className={styles.stats}>
-          {HERO_STATS.map((s, i) => (
-            <div key={i} className={styles.stat}>
-              <div className={styles.statNum}>{s.num}</div>
-              <div className={styles.statLabel}>{s.label}</div>
+        {/* Stats row */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+          marginTop: 80, borderTop: `1px solid ${LINE}`,
+        }}>
+          {HERO_STATS.map(([n, l], i) => (
+            <div
+              key={l}
+              style={{
+                padding: "28px 0 0",
+                borderLeft: i === 0 ? "none" : `1px solid ${LINE}`,
+                paddingLeft: i === 0 ? 0 : 28,
+              }}
+            >
+              <div style={{ fontFamily: SERIF, fontSize: 34, color: INK }}>{n}</div>
+              <div style={{ fontFamily: SANS, fontSize: 13, color: INK_SOFT, marginTop: 4 }}>{l}</div>
             </div>
           ))}
         </div>
-
-        {/* Social icons */}
-        <div className={styles.socials}>
-          <span className={styles.socialsLabel}>Follow Us</span>
-          <div className={styles.socialsDivider} />
-          {SOCIAL_LINKS.map(s => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noreferrer"
-              title={s.label}
-              className={styles.socialBtn}
-              dangerouslySetInnerHTML={{ __html: s.svg }}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.scrollHint}>
-        <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M12 5v14M5 12l7 7 7-7" />
-        </svg>
-      </div>
+      </Container>
     </section>
-  )
+  );
 }

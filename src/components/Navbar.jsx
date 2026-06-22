@@ -1,65 +1,82 @@
-import { useState, useEffect } from 'react'
-import { NAV_ITEMS } from '../data/siteData'
-import styles from './Navbar.module.css'
+import { useState } from "react";
+import { Container, INK, INK_SOFT, LINE, PAPER, ACCENT, SANS, SERIF } from "./UI";
+import { NAV_ITEMS } from "../data/siteData";
 
-export default function Navbar({ onScrollTo }) {
-  const [scrolled,    setScrolled]    = useState(false)
-  const [menuOpen,    setMenuOpen]    = useState(false)
-  const [activeSection, setActive]   = useState('home')
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const handleNav = (id) => {
-    onScrollTo(id)
-    setActive(id)
-    setMenuOpen(false)
-  }
+export default function Navbar({ page, setPage }) {
+  const [open, setOpen] = useState(false);
 
   return (
-    <>
-      <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
-        <div className={styles.logo} onClick={() => handleNav('home')}>
-          <div className={styles.logoIcon}>H</div>
-          <span className={styles.logoText}>HEAL Project</span>
+    <header style={{
+      position: "sticky", top: 0, zIndex: 100,
+      background: "rgba(243,248,246,0.92)",
+      backdropFilter: "blur(8px)",
+      borderBottom: `1px solid ${LINE}`,
+    }}>
+      <Container style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
+        {/* Logo */}
+        <div
+          onClick={() => { setPage("home"); setOpen(false); }}
+          style={{ cursor: "pointer" }}
+        >
+          <span style={{ fontFamily: SERIF, fontSize: 21, fontWeight: 600, color: INK, letterSpacing: "-0.01em" }}>
+            The HEAL Project
+          </span>
         </div>
 
-        <div className={styles.links}>
-          {NAV_ITEMS.map(n => (
+        {/* Desktop nav */}
+        <nav className="heal-desktop-nav">
+          {NAV_ITEMS.map(([label, id]) => (
             <button
-              key={n.id}
-              className={`${styles.link} ${activeSection === n.id ? styles.active : ''}`}
-              onClick={() => handleNav(n.id)}
+              key={id}
+              onClick={() => setPage(id)}
+              style={{
+                background: "none", border: "none", cursor: "pointer",
+                fontFamily: SANS, fontSize: 13.5, padding: "8px 11px",
+                color: page === id ? INK : INK_SOFT,
+                fontWeight: page === id ? 500 : 400,
+                borderBottom: page === id ? `1px solid ${ACCENT}` : "1px solid transparent",
+              }}
             >
-              {n.label}
+              {label}
             </button>
           ))}
-        </div>
+        </nav>
 
-        <button className={styles.cta} onClick={() => handleNav('involved')}>
-          Join Us →
+        {/* Mobile hamburger */}
+        <button
+          className="heal-mobile-toggle"
+          onClick={() => setOpen(!open)}
+          style={{
+            background: "none", border: `1px solid ${LINE}`, borderRadius: 6,
+            width: 36, height: 36, fontFamily: SANS, fontSize: 18, color: INK,
+          }}
+        >
+          {open ? "\u2715" : "\u2630"}
         </button>
+      </Container>
 
-        <div className={styles.hamburger} onClick={() => setMenuOpen(o => !o)}>
-          <span className={menuOpen ? styles.open1 : ''} />
-          <span className={menuOpen ? styles.open2 : ''} />
-          <span className={menuOpen ? styles.open3 : ''} />
+      {/* Mobile menu */}
+      {open && (
+        <div style={{ borderTop: `1px solid ${LINE}`, background: PAPER }}>
+          <Container style={{ display: "flex", flexDirection: "column", padding: "8px 32px 16px" }}>
+            {NAV_ITEMS.map(([label, id]) => (
+              <button
+                key={id}
+                onClick={() => { setPage(id); setOpen(false); }}
+                style={{
+                  background: "none", border: "none", textAlign: "left",
+                  padding: "12px 0", fontFamily: SANS, fontSize: 15,
+                  color: page === id ? INK : INK_SOFT,
+                  borderBottom: `1px solid ${LINE}`,
+                  fontWeight: page === id ? 500 : 400,
+                }}
+              >
+                {label}
+              </button>
+            ))}
+          </Container>
         </div>
-      </nav>
-
-      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileOpen : ''}`}>
-        {NAV_ITEMS.map(n => (
-          <button key={n.id} className={styles.link} onClick={() => handleNav(n.id)}>
-            {n.label}
-          </button>
-        ))}
-        <button className="btn-primary" style={{ marginTop: '1rem' }} onClick={() => handleNav('involved')}>
-          Join Us →
-        </button>
-      </div>
-    </>
-  )
+      )}
+    </header>
+  );
 }
