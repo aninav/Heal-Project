@@ -7,11 +7,12 @@ const INK_SOFT= "#5C6B64";
 const LINE    = "#D8E3DD";
 const PAPER   = "#F3F8F6";
 const CARD    = "#FFFFFF";
-const ACCENT  = "#0E6B53";
+const ACCENT      = "#0E6B53";
+const ACCENT_SOFT = "#E4F1EC";
 const SERIF   = "'Source Serif 4', Georgia, serif";
 const SANS    = "'Inter', -apple-system, sans-serif";
 
-export { INK, INK_SOFT, LINE, PAPER, CARD, ACCENT, SERIF, SANS };
+export { INK, INK_SOFT, LINE, PAPER, CARD, ACCENT, ACCENT_SOFT, SERIF, SANS };
 
 export function Container({ children, style }) {
   return (
