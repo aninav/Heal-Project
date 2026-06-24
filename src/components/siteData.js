@@ -48,7 +48,7 @@ export const NAV_ITEMS = [
 
 /* ---------- Hero stats ---------- */
 export const HERO_STATS = [
-  ["500+", "Students reached"],
+  ["400k+", "Students reached"],
   ["12", "Health topics"],
   ["9", "Team & writers"],
   ["3", "Partner orgs"],

@@ -6,7 +6,7 @@ export default function Hero({ setPage }) {
     <section style={{ padding: "96px 0 88px", borderBottom: `1px solid ${LINE}` }}>
       <Container>
         <div style={{ maxWidth: 720 }}>
-          <Kicker>Student-led nonprofit &middot; Est. 2024</Kicker>
+          <Kicker>Student-led nonprofit &middot; Est. 2025</Kicker>
           <h1 style={{
             fontFamily: SERIF, fontWeight: 400,
             fontSize: "clamp(40px, 7vw, 68px)",
