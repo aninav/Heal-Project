@@ -20,15 +20,18 @@ export const FONTS = {
 
 /* ---------- Team ---------- */
 export const TEAM = [
-  { slug: "laylah-wolf", name: "Laylah Wolf", role: "Founder & CEO", bio: "Laylah founded The HEAL Project to bring free, stigma-free health education to teens everywhere. She leads strategy, partnerships, and the org's research direction." },
-  { slug: "lee-t", name: "Lee T.", role: "Vice President", bio: "Lee oversees day-to-day operations and helps coordinate programs across HEAL's chapters and initiatives." },
-  { slug: "brycen-w", name: "Brycen W.", role: "Social Media Manager", bio: "Brycen runs HEAL's social presence, helping spread free health resources to a wider teen audience." },
-  { slug: "ayla-t", name: "Ayla T.", role: "Leader of Writing & Research", bio: "Ayla co-leads HEAL's writing and research team, helping fact-check and develop original health content." },
-  { slug: "nicola-k", name: "Nicola K.", role: "Leader of Writing & Research", bio: "Nicola co-leads HEAL's writing and research team, focusing on nutrition and wellness content." },
-  { slug: "angel-g", name: "Angel G.", role: "Leader of Art & Graphic Design", bio: "Angel leads HEAL's visual identity and design work across the site and social channels." },
-  { slug: "anirudh-n", name: "Anirudh N.", role: "Chief Technology Officer", bio: "Anirudh manages HEAL's website and technical infrastructure." },
-  { slug: "dhanya-duvvuru", name: "Dhanya Duvvuru", role: "Writer & Researcher", bio: "Dhanya writes and researches original science and health explainers for The HEAL Project." },
-  { slug: "oyindamola-borisade", name: "Oyindamola Borisade", role: "Writer", bio: "Oyindamola contributes original research-based writing to The HEAL Project, with a focus on mental health topics." },
+  // Core team — shown on Meet the Team page
+  { slug: "laylah-wolf",         name: "Laylah Wolf",         role: "Founder & CEO",                    avatar: null, bio: "Laylah founded The HEAL Project to bring free, stigma-free health education to teens everywhere. She leads strategy, partnerships, and the org's research direction." },
+  { slug: "lee-t",               name: "Lee T.",               role: "Vice President",                   avatar: null, bio: "Lee oversees day-to-day operations and helps coordinate programs across HEAL's chapters and initiatives." },
+  { slug: "anirudh-n",           name: "Anirudh N.",           role: "Chief Technology Officer",         avatar: null, bio: "Anirudh manages HEAL's website and technical infrastructure." },
+  { slug: "brycen-w",            name: "Brycen W.",            role: "Social Media Manager",             avatar: null, bio: "Brycen runs HEAL's social presence, helping spread free health resources to a wider teen audience." },
+  { slug: "ayla-t",              name: "Ayla T.",              role: "Leader of Writing & Research",     avatar: null, bio: "Ayla co-leads HEAL's writing and research team, helping fact-check and develop original health content." },
+  { slug: "nicola-k",            name: "Nicola K.",            role: "Leader of Writing & Research",     avatar: null, bio: "Nicola co-leads HEAL's writing and research team, focusing on nutrition and wellness content." },
+  { slug: "angel-g",             name: "Angel G.",             role: "Leader of Art & Graphic Design",   avatar: null, bio: "Angel leads HEAL's visual identity and design work across the site and social channels." },
+  // Writers/Researchers — shown in journal bylines and author profiles, ordered by most recent post
+  { slug: "oyindamola-borisade", name: "Oyindamola Borisade", role: "Writer",                           avatar: null, bio: "Oyindamola contributes original research-based writing to The HEAL Project, with a focus on mental health topics." },
+  { slug: "dhanya-duvvuru",      name: "Dhanya Duvvuru",      role: "Writer & Researcher",              avatar: null, bio: "Dhanya writes and researches original science and health explainers for The HEAL Project." },
+  { slug: "laylah-wolf-researcher", name: "Laylah Wolf",      role: "Researcher",                       avatar: null, bio: "Laylah researches and fact-checks original health and science content for The HEAL Project." },
 ];
 
 /* ---------- Nav ---------- */
