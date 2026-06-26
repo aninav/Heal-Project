@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Container, Kicker, Rule, Pill, INK, INK_SOFT, LINE, ACCENT, SANS, SERIF } from "./UI";
 import { ARTICLES } from "../data/siteData";
 
+// Articles are stored oldest-first in siteData; reverse for display (newest first)
+const ARTICLES_NEWEST_FIRST = [...ARTICLES].reverse();
+
 function slugify(name) {
   return (name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
@@ -156,8 +159,8 @@ export default function JournalPage({ onOpenAuthor }) {
   const [selected, setSelected] = useState(null);
   const [filter, setFilter] = useState("All");
 
-  const cats = ["All", ...Array.from(new Set(ARTICLES.map(a => a.category)))];
-  const filtered = filter === "All" ? ARTICLES : ARTICLES.filter(a => a.category === filter);
+  const cats = ["All", ...Array.from(new Set(ARTICLES_NEWEST_FIRST.map(a => a.category)))];
+  const filtered = filter === "All" ? ARTICLES_NEWEST_FIRST : ARTICLES_NEWEST_FIRST.filter(a => a.category === filter);
 
   if (selected) return (
     <ArticleReader article={selected} onBack={() => setSelected(null)} onOpenAuthor={onOpenAuthor} />

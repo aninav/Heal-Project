@@ -13,6 +13,9 @@ import Footer from "./components/Footer";
 import { ARTICLES } from "./data/siteData";
 import { Container, SectionHeading, Rule, INK, LINE, SANS } from "./components/UI";
 
+// Show newest articles first on the homepage preview
+const ARTICLES_NEWEST_FIRST = [...ARTICLES].reverse();
+
 function HomePage({ setPage, openAuthor }) {
   return (
     <>
@@ -32,7 +35,7 @@ function HomePage({ setPage, openAuthor }) {
               View all →
             </button>
           </div>
-          {ARTICLES.slice(0, 4).map((a, i) => (
+          {ARTICLES_NEWEST_FIRST.slice(0, 4).map((a, i) => (
             <ArticleCard key={a.id} article={a} index={i} onClick={() => setPage("blog")} />
           ))}
           <Rule />

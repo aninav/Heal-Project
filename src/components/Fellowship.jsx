@@ -95,14 +95,24 @@ export default function FellowshipPage() {
         </ul>
       </Container>
 
-      {/* CTA */}
+      {/* Applications closed notice — replaces the CTA with apply button */}
       <section style={{ background: ACCENT_SOFT, padding: "56px 0" }}>
         <Container style={{ textAlign: "center" }}>
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: 8,
+            background: "#fff", border: `1px solid ${LINE}`,
+            borderRadius: 100, padding: "7px 18px", marginBottom: 20,
+          }}>
+            <span style={{ fontFamily: SANS, fontSize: 12, fontWeight: 600, color: INK_SOFT, letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              Applications closed
+            </span>
+          </div>
           <h2 style={{ fontFamily: SERIF, fontSize: 26, fontWeight: 600, color: INK, marginBottom: 12 }}>
-            Interested in applying?
+            The application deadline has passed
           </h2>
-          <p style={{ fontFamily: SANS, fontSize: 15, color: INK_SOFT, marginBottom: 24, maxWidth: 480, margin: "0 auto 24px" }}>
-            Reach out to either contact email above for the current application and mentor matching process.
+          <p style={{ fontFamily: SANS, fontSize: 15, color: INK_SOFT, maxWidth: 480, margin: "0 auto 24px", lineHeight: 1.7 }}>
+            Thank you to everyone who applied for the Summer Research Fellowship 2026.
+            Stay in touch to hear about future programs and opportunities.
           </p>
           <a
             href="mailto:thehealproject48@gmail.com"
@@ -112,7 +122,7 @@ export default function FellowshipPage() {
               borderRadius: 4, display: "inline-block",
             }}
           >
-            Email us
+            Stay in touch
           </a>
         </Container>
       </section>
