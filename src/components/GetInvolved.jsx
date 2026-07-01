@@ -5,19 +5,41 @@ export default function GetInvolved() {
   return (
     <section style={{ padding: "88px 0", borderBottom: `1px solid ${LINE}` }}>
       <Container>
-        <SectionHeading kicker="Join us" title="Get involved" sub="Whether you want to volunteer, start a chapter, or join a challenge, there's a place for you." />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
+        <SectionHeading
+          kicker="Join us"
+          title="Get involved"
+          sub="Whether you want to volunteer, start a chapter, lead as an ambassador, or join a challenge — there's a place for you."
+        />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
           {INVOLVED_CARDS.map((card, i) => (
             <div key={card.title} style={{
               padding: "28px 24px 28px 0", borderTop: `1px solid ${LINE}`,
               borderLeft: i !== 0 ? `1px solid ${LINE}` : "none",
               paddingLeft: i !== 0 ? 24 : 0,
             }}>
-              <h3 style={{ fontFamily: SERIF, fontSize: 20, fontWeight: 600, color: INK, margin: "0 0 10px" }}>{card.title}</h3>
-              <p style={{ fontFamily: SANS, fontSize: 14, color: INK_SOFT, lineHeight: 1.7, margin: "0 0 18px" }}>{card.desc}</p>
-              <a href="mailto:thehealproject48@gmail.com" style={{ fontFamily: SANS, fontSize: 14, color: ACCENT, fontWeight: 500 }}>
-                Get started →
-              </a>
+              <h3 style={{ fontFamily: SERIF, fontSize: 20, fontWeight: 600, color: INK, margin: "0 0 10px" }}>
+                {card.title}
+              </h3>
+              <p style={{ fontFamily: SANS, fontSize: 14, color: INK_SOFT, lineHeight: 1.7, margin: "0 0 18px" }}>
+                {card.desc}
+              </p>
+              {card.link ? (
+                <a
+                  href={card.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontFamily: SANS, fontSize: 14, color: ACCENT, fontWeight: 500 }}
+                >
+                  {card.linkLabel}
+                </a>
+              ) : (
+                <a
+                  href="mailto:thehealproject48@gmail.com"
+                  style={{ fontFamily: SANS, fontSize: 14, color: ACCENT, fontWeight: 500 }}
+                >
+                  {card.linkLabel}
+                </a>
+              )}
             </div>
           ))}
         </div>

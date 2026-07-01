@@ -6,6 +6,8 @@ import { Team, AuthorProfile } from "./components/Team";
 import JournalPage, { ArticleCard } from "./components/Articles";
 import ChaptersPage from "./components/Chapters";
 import FellowshipPage from "./components/Fellowship";
+import AmbassadorPage from "./components/Ambassador";
+import MentorshipPage from "./components/Mentorship";
 import Partners from "./components/Partners";
 import GetInvolved from "./components/GetInvolved";
 import Newsletter from "./components/Newsletter";
@@ -13,7 +15,7 @@ import Footer from "./components/Footer";
 import { ARTICLES } from "./data/siteData";
 import { Container, SectionHeading, Rule, INK, LINE, SANS } from "./components/UI";
 
-// Show newest articles first on the homepage preview
+// Show newest articles first on the homepage preview (last in array = most recent)
 const ARTICLES_NEWEST_FIRST = [...ARTICLES].reverse();
 
 function HomePage({ setPage, openAuthor }) {
@@ -59,16 +61,18 @@ export default function App() {
 
   const render = () => {
     switch (page) {
-      case "home":       return <HomePage setPage={setPage} openAuthor={openAuthor} />;
-      case "programs":   return <div style={{ paddingTop: 64 }}><Programs /><HealthTopics /></div>;
-      case "blog":       return <JournalPage onOpenAuthor={openAuthor} />;
-      case "team":       return <div style={{ paddingTop: 64 }}><Team setPage={setPage} setAuthorSlug={openAuthor} /></div>;
-      case "author":     return <AuthorProfile slug={authorSlug} onBack={() => setPage("team")} onOpenArticle={() => setPage("blog")} onOpenAuthor={openAuthor} />;
-      case "chapters":   return <ChaptersPage />;
-      case "fellowship": return <FellowshipPage />;
-      case "partners":   return <div style={{ paddingTop: 64 }}><Partners /></div>;
-      case "involved":   return <div style={{ paddingTop: 64 }}><GetInvolved /><Newsletter /></div>;
-      default:           return <HomePage setPage={setPage} openAuthor={openAuthor} />;
+      case "home":        return <HomePage setPage={setPage} openAuthor={openAuthor} />;
+      case "programs":    return <div style={{ paddingTop: 64 }}><Programs /><HealthTopics /></div>;
+      case "blog":        return <JournalPage onOpenAuthor={openAuthor} />;
+      case "team":        return <div style={{ paddingTop: 64 }}><Team setPage={setPage} setAuthorSlug={openAuthor} /></div>;
+      case "author":      return <AuthorProfile slug={authorSlug} onBack={() => setPage("team")} onOpenArticle={() => setPage("blog")} onOpenAuthor={openAuthor} />;
+      case "chapters":    return <ChaptersPage />;
+      case "fellowship":  return <FellowshipPage />;
+      case "ambassador":  return <AmbassadorPage />;
+      case "mentorship":  return <MentorshipPage />;
+      case "partners":    return <div style={{ paddingTop: 64 }}><Partners /></div>;
+      case "involved":    return <div style={{ paddingTop: 64 }}><GetInvolved /><Newsletter /></div>;
+      default:            return <HomePage setPage={setPage} openAuthor={openAuthor} />;
     }
   };
 

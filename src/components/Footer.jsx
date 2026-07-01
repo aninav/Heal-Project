@@ -12,7 +12,7 @@ export default function Footer({ setPage }) {
             <p style={{ fontFamily: SANS, fontSize: 13.5, color: INK_SOFT, lineHeight: 1.8 }}>
               Health Education Access League.<br />Free health education for teens, by teens.
             </p>
-            {/* 501c3 callout */}
+            {/* 501(c)(3) badge */}
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 6,
               marginTop: 12, background: "#E4F1EC", border: "1px solid #B8DAD0",
